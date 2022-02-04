@@ -12,14 +12,12 @@ spec:
           - name: secret
           - name: options
       container:
-        image: {{ .Values.mongoUtils.image }}
+        image: bimspot/jwt-generator
         imagePullPolicy: IfNotPresent
         env:
           - name: PAYLOAD
-            value: {{ workflow.parameters.payload }}
+            value: "{{inputs.parameters.payload}}"
           - name: SECRET
-            value: {{ workflow.parameters.payload }}
+            value: "{{ inputs.parameters.secret }}"
           - name: OPTIONS
-            value: {{ workflow.parameters.payload }}
-
-
+            value: "{{ inputs.parameters.options }}"
