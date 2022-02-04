@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "prettier",
+    "plugin:node/recommended"
+  ],
+  "plugins": [],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "es2020": true,
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "globals": {
+    "_": true
+  },
+  "rules": {
+    "semi": [2, "never"],
+    "no-console": "warn",
+    "node/no-unpublished-import": "warn",
+    "no-process-exit": "warn",
+    "node/file-extension-in-import": ["error", "always"]
+  }
+}

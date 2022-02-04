@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: jwt-generator-template
+spec:
+  entrypoint: jwt-generator
+  templates:
+    - name: jwt-generator
+      inputs:
+        parameters:
+          - name: payload
+          - name: secret
+          - name: options
+      container:
+        image: {{ .Values.mongoUtils.image }}
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: PAYLOAD
+            value: {{ workflow.parameters.payload }}
+          - name: SECRET
+            value: {{ workflow.parameters.payload }}
+          - name: OPTIONS
+            value: {{ workflow.parameters.payload }}
+
+
