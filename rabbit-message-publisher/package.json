@@ -1,8 +1,8 @@
 {
   "name": "rabbit-message-publisher",
   "version": "1.0.0",
-  "description": "The script sends messages to ",
-  "main": "index.js",
+  "description": "The script is used for publishing RabbitMQ message.",
+  "main": "publisher.js",
   "scripts": {
     "lint": "node_modules/.bin/eslint .",
     "prettier-check": "cross-env prettier --check './**/*.js'",
@@ -21,14 +21,15 @@
     "rabbitmq",
     "argo"
   ],
-  "author": "Adam Eri",
+  "author": "Balint Bende",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bimspot/argo-workflows-utils/issues"
   },
   "homepage": "https://github.com/bimspot/argo-workflows-utils#readme",
   "dependencies": {
-    "amqplib": "^0.8.0"
+    "amqplib": "^0.8.0",
+    "yargs": "^17.3.1"
   },
   "devDependencies": {
     "@babel/core": "7.15.8",
