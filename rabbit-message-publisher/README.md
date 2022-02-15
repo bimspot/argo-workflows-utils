@@ -6,6 +6,7 @@ The script is used for publishing RabbitMQ message from the provided arguments.
 
 ## Usage
 
+```
 Usage: publisher.js [options]
 
 Options:
@@ -20,3 +21,4 @@ Options:
 
 Examples:
   publisher.js -u amqp://localhost -e file -k file.event.created -m {} -d
+```
