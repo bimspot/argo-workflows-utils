@@ -3,10 +3,11 @@ import yargs from 'yargs'
 
 var argv = yargs(process.argv.slice(2))
     .usage('Usage: $0 [options]')
-    .example('$0 -u amqp://localhost -e file -k file.event.created -m {} -d', 
+    .example('$0 -u amqp://localhost -e file -t topic -k file.event.created -m {} -d',
     'The publisher will connect to RabbitMQ, send a single message, then exit.')
     .alias('u', 'uri').nargs('u', 1).describe('u', 'RabbitMQ amqp uri.')
     .alias('e', 'exchange').nargs('e', 1).describe('e', 'Topic exchange to which the message is sent.')
+    .alias('t', 'type').nargs('t', 1).describe('e', 'The type of he exchange (direct, topic, fanout, match).')
     .alias('k', 'key').nargs('k', 1).describe('k', 'Routing key.')
     .alias('m', 'message').nargs('m', 1).describe('m', 'Message to be sent.')
     .option('durable', {
@@ -14,7 +15,7 @@ var argv = yargs(process.argv.slice(2))
       type: 'boolean',
       description: 'Optionally the queue will survive the broker restart.'
     })
-    .demandOption(['u', 'e', 'k', 'm'])
+    .demandOption(['u', 'e', 't', 'k', 'm'])
     .help('h')
     .alias('h', 'help')
     .argv;
@@ -30,7 +31,7 @@ connect(argv.uri, (error, connection) => {
     }
     // durable false by default
     let durable = argv.durable || false
-    channel.assertExchange(argv.exchange, 'topic', {
+    channel.assertExchange(argv.exchange, argv.type, {
       durable: durable
     })
     channel.publish(argv.exchange, argv.key, Buffer.from(argv.message))
