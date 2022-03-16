@@ -9,6 +9,10 @@ try {
     clientProperties: { connection_name: Env.connectionName },
   })
   const channel = await connection.createChannel()
+  Log.debug(
+    `Asserting exchange ${Env.exchange}, ` +
+      `type: ${Env.type}, durable: ${Env.durable}`,
+  )
   await channel.assertExchange(Env.exchange, Env.type, {
     durable: Env.durable,
   })
