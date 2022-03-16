@@ -12,6 +12,10 @@ try {
   await channel.assertExchange(Env.exchange, Env.type, {
     durable: Env.durable,
   })
+  Log.debug(
+    `Publishing message to ${Env.exchange}, ${Env.routingKey}`,
+    Env.message,
+  )
   channel.publish(Env.exchange, Env.routingKey, Buffer.from(Env.message))
   await setTimeout(500)
   await connection.close()
