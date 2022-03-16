@@ -29,6 +29,10 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: bimspot/jwt-generator
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=raw,value={{branch}}-{{sha}}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
