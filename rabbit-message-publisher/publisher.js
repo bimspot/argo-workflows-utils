@@ -17,8 +17,7 @@ try {
     durable: Env.durable,
   })
   Log.debug(
-    `Publishing message to ${Env.exchange}, ${Env.routingKey}`,
-    Env.message,
+    `Publishing message to ${Env.exchange}, ${Env.routingKey}, ${Env.message}`,
   )
   channel.publish(Env.exchange, Env.routingKey, Buffer.from(Env.message))
   await setTimeout(500)
