@@ -22,7 +22,8 @@ export const Env = {
 export const assertEnv = () => {
   let missingEnv = false
   for (const [key, value] of Object.entries(Env)) {
-    if (!value) {
+    // `false` is an acceptable value
+    if (value === null || value === undefined) {
       Log.error(`A required environment variable is missing or empty: ${key}`)
       missingEnv = true
     }
