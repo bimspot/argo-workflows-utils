@@ -11,9 +11,9 @@ try {
   const channel = await connection.createChannel()
   Log.debug(
     `Asserting exchange ${Env.exchange}, ` +
-      `type: ${Env.type}, durable: ${Env.durable}`,
+      `type: ${Env.exchangeType}, durable: ${Env.durable}`,
   )
-  await channel.assertExchange(Env.exchange, Env.type, {
+  await channel.assertExchange(Env.exchange, Env.exchangeType, {
     durable: Env.durable,
   })
   Log.debug(
