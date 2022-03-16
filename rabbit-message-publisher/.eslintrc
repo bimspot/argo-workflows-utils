@@ -7,7 +7,7 @@
   ],
   "plugins": [],
   "parserOptions": {
-    "ecmaVersion": 11,
+    "ecmaVersion": 2022,
     "sourceType": "module"
   },
   "env": {
@@ -23,8 +23,8 @@
   "rules": {
     "semi": [2, "never"],
     "no-console": "warn",
-    "node/no-unpublished-import": "warn",
     "no-process-exit": "warn",
+    "node/no-unpublished-import": "warn",
     "node/file-extension-in-import": ["error", "always"]
   }
 }
