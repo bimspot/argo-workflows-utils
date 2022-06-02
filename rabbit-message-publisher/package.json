@@ -1,0 +1,46 @@
+{
+  "name": "rabbit-message-publisher",
+  "version": "1.0.0",
+  "description": "The script is used for publishing RabbitMQ message.",
+  "main": "publisher.js",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint .",
+    "prettier-check": "cross-env prettier --check './**/*.js'",
+    "prettier-write": "cross-env prettier --write './**/*.js'",
+    "back-to-formula": "run-s lint prettier-check test"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=17.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bimspot/argo-workflows-utils.git"
+  },
+  "keywords": [
+    "rabbitmq",
+    "argo"
+  ],
+  "author": "Balint Bende",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bimspot/argo-workflows-utils/issues"
+  },
+  "homepage": "https://github.com/bimspot/argo-workflows-utils#readme",
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "bunyan": "^1.8.15"
+  },
+  "devDependencies": {
+    "@babel/core": "7.17.7",
+    "@babel/preset-env": "7.16.11",
+    "babel-jest": "27.5.1",
+    "cross-env": "7.0.3",
+    "eslint": "8.11.0",
+    "eslint-config-google": "0.14.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-node": "11.1.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.6.0"
+  }
+}
