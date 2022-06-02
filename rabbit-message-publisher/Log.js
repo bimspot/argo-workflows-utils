@@ -1,7 +1,7 @@
 import { default as bunyan } from 'bunyan'
 
 const log = bunyan.createLogger({
-  name: 'workflow-progress',
+  name: 'rabbit-message-publisher',
   level: 20, // for showing debug logs
 })
 
