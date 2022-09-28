@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/bimspot/argo-workflows-utils#readme",
   "dependencies": {
-    "amqplib": "^0.8.0",
+    "amqplib": "^0.10.3",
     "bunyan": "^1.8.15"
   },
   "devDependencies": {
