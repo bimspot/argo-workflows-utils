@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.15.8",
-    "@babel/preset-env": "7.15.8",
+    "@babel/preset-env": "7.22.6",
     "babel-jest": "^27.2.5",
     "cross-env": "7.0.3",
     "eslint": "^7.32.0",
