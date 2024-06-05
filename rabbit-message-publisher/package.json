@@ -32,8 +32,8 @@
     "bunyan": "^1.8.15"
   },
   "devDependencies": {
-    "@babel/core": "7.17.7",
-    "@babel/preset-env": "7.16.11",
+    "@babel/core": "7.24.5",
+    "@babel/preset-env": "7.24.5",
     "babel-jest": "27.5.1",
     "cross-env": "7.0.3",
     "eslint": "8.11.0",
